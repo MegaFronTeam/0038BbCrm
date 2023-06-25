@@ -1,0 +1,42 @@
+mixin modalChat(data)
+	// start modalChat
+	+b.modalChat
+		+e.toggle
+			img(src="img/ps_chat.svg", alt="")
+			.text 3 новых сообщения
+		+e.body
+			+b.chat-block
+				+e.menu.d-none
+					+e.step-head
+						| Чат
+						+e.btn-back
+							+icon("close")
+					+e.step-body
+						- for (var x = 0; x < 3; x++)
+							+e.contact-item
+								+e.tel  +38092836574
+								+icon("uiw_facebook")
+								+e.time 12:10
+							+e.contact-item
+								+e.tel  +38092836574
+								+icon("mail")
+								+e.time 14:21
+
+
+				+e.step--content
+					+e.contact-item
+						+e.tel  +38092836574
+						+icon("mail")
+						+e.close-btn
+							+icon("chevron-left")
+					+e.messanger
+						+e.messanger-body
+							+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+							+e.mess Нас будет 4 человека
+							+e.mess--right Добрый день, за Вами забронирован стол номер 8, пожалуйста, не задерживайтесь, хорошего дня!
+							+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+							+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+						+e.messanger-footer
+							textarea.form-control
+							+e.btn(type="submit").btn.btn-primary
+								+icon("tabler_send")

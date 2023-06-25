@@ -1,0 +1,110 @@
+mixin sOpen(data)
+	#TableWrap.row.ConteerRowTable
+	
+		mixin row(h2="Открытые", cl='item-open')
+			+b.board_block--grid
+				h2= h2
+				- for (var x = 0; x < 8; x++)
+					.board_col
+						+b.board_imem(href='https://p.bb-crm.com/table_open#' class= cl)
+							+e.img-wrap
+								img(src='base/tennis.png')
+								p Хард
+								span № 4
+							+e.caption
+								+e.head
+									img(src="base/clock.png", alt="")
+									| Бронь
+								+e.body
+									ul
+										- for (var x = 0; x < 3; x++)
+											li 16:00 - 18:30
+											li 19:30 - 21:00
+											li 21:00 - 23:00
+											li 23:00 - 23:30
+				.board_table-wrap
+					.board_table
+						table
+							tbody
+								tr
+									td Номер
+									td
+										img(src='base/stol.png' alt='stol')
+									td
+										p № 4 Хард
+								tr
+									td Номер замовлення
+									td
+										img(src='base/number.png' alt='namber')
+									td
+										p 15
+								tr
+									td Дата відкриття
+									td
+										img(src='base/colendar-s.png' alt='colendar')
+									td
+										p 30-05-2023
+								tr
+									td Час відкриття
+									td
+										img(src='base/clock.png' alt='clock')
+									td
+										p 16:03
+								tr
+									td Клієнт
+									td
+										img(src='base/contact.png' alt='contact')
+									td
+										p Гість
+								tr
+									td Стіл відкритий
+									td
+										img(src='base/clock.png' alt='clock')
+									td
+										p 574 : 30
+								tr
+									td Ціна за хвилину
+									td
+										img(src='base/many.png' alt='many')
+									td
+										p 8.33
+								tr(style='display: none;')
+									td Паузи
+									td
+										img(src='base/pause.png' alt='pause')
+									td
+								tr
+									td Розрахунок знижки
+									td
+										img(src='base/procent.png' alt='procent')
+									td
+										p.procent
+											| 0
+											span Знижка
+										p.procent
+											| 21774.62 ₴
+											span Сума
+										br
+										p.procent
+											| 0 ₴
+											span Знижка
+										p.procent
+											| 21774.62 ₴
+											span Кінцева ціна
+						.board_link
+							a.link-item.link-orange(href='https://p.bb-crm.com/table_open')
+								img(src='base/link-procent.png' alt='procent')
+								p Знижка
+							a.link-item.link-orange(href='https://p.bb-crm.com/table_open#')
+								img(src='base/link-pause.png' alt='pause')
+								p Пауза
+							a.link-item.link-blue(href='https://p.bb-crm.com/table_open')
+								img(src='base/chek.png' alt='chek')
+								p друк чека
+							a.link-item.link-blues(href='https://p.bb-crm.com/table_open#')
+								img(src='base/zakaz.png' alt='zakaz')
+								p Закрити
+						a.back.backTable(href='https://p.bb-crm.com/table_open')
+							img(src='base/back.png' alt='back')
+		+row()
+		+row('Закрытые', cl='item-close')

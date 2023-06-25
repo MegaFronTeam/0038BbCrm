@@ -1,0 +1,130 @@
+// start .ChatPage
+.ChatPage {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	
+	// --sTPB: #{rem()};
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+
+	.chat-block{ 
+		height: calc(100vh - 150px);
+		padding-bottom: calc(env(safe-area-inset-bottom, 0px));
+		display: flex;
+		flex-direction: column;
+		&__row{
+			height: 100%;
+
+			&>* {
+				height: 100%;
+			}
+		}
+		&__step{
+			@media (min-width: 768px){
+
+				max-width: 530px;
+			}
+			// max-width: 530px;
+			width: 100%;
+			height: 100%;
+		}
+		&__menu{
+			max-height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__head{
+			display: flex;
+			position: relative;
+			.chat-block__input-wrap{
+				flex-grow: 1;
+				// @include roww(10px, 0, m);
+				margin: 0;
+				margin-right: 10px;
+				position: relative;
+
+			}
+			input{
+				background: transparent;
+				border-radius: 0;
+				border: none;
+				padding: 3px;
+				padding-left: 30px;
+				border-bottom: 1px solid ;
+
+			}
+			padding: 10px 10px;
+		}
+		&__datepicker{
+			cursor: pointer;
+			margin-right: 10px;
+			.icon{
+				font-size: 20px;
+			}
+			color: #478ECC;
+		}
+} 
+.chat-block__step--content{
+	display: flex;
+	flex-direction: column;
+	.chat-block__contact-item{
+	height: 62px !important;
+	.icon{
+
+	}
+}
+}
+.chat-block__messanger-body{
+	// height: 100%;
+	width: 100%;
+	// height: initial;
+	flex-grow: 1;
+}
+.chat-block__messanger{
+	
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	height: calc(100% - 40px);
+} 
+.chat-block__step-body{
+	flex-grow: 1;
+	max-height: 100%;
+}
+.chat-block__btn-search{
+	background: none !important;
+	border: none !important;
+	box-shadow: none;
+	position: absolute;
+	left: 0;
+	color: #828282;
+	.icon{
+		font-size: 20px;
+	}
+}
+.chat-block__mess{
+	max-width: 260px;
+	// width: 100%;
+
+}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.ChatPage

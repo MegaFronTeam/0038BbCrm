@@ -1,0 +1,179 @@
+mixin  chatBody()
+	// start ChatPage
+	+b.ChatPage#ChatPage&attributes(attributes) 
+		+b.section-title
+			h2 Чат
+		+b.chat-block
+			+e.row.row
+				.col-md-4
+					+e.menu
+						+e.head
+							+input()
+							+e.btn-search(type="button")
+								+icon("icon-search")
+							+e.datepicker(href="#modal-date" data-fancybox)
+								+icon("datepicker")
+						+e.step-body
+							- for (var x = 0; x < 10; x++)
+								+e.contact-item--new
+									+e.tel  +38092836574
+									+icon("uiw_facebook")
+									+e.time 12:10
+								+e.contact-item
+									+e.tel  +38092836574
+									+icon("mail")
+									+e.time 14:21
+				#modal-date(style="d-none").moda-date
+					.calendar-wrap
+						div
+							.vc-container.vc-blue.vc-is-expanded(data-helptext='Press the arrow keys to navigate by day, Home and End to navigate to week ends, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year' is-expanded='')
+								.vc-popover-content-wrapper(data-v-05016e86='')
+									// 
+								.vc-pane-container
+									.vc-pane-layout(data-v-8466592e='', style='grid-template-columns: repeat(1, 1fr);')
+										.vc-pane.row-from-end-1.column-from-end-1(data-v-37fb1233='')
+											.vc-header.align-center(data-v-37fb1233='')
+												.vc-title(data-v-37fb1233='') июнь 2023
+											.vc-weeks(data-v-37fb1233='')
+												.vc-weekday(data-v-37fb1233='') П
+												.vc-weekday(data-v-37fb1233='') В
+												.vc-weekday(data-v-37fb1233='') С
+												.vc-weekday(data-v-37fb1233='') Ч
+												.vc-weekday(data-v-37fb1233='') П
+												.vc-weekday(data-v-37fb1233='') С
+												.vc-weekday(data-v-37fb1233='') В
+												.vc-day.id-2023-05-29.day-29.day-from-end-3.weekday-2.weekday-position-1.weekday-ordinal-5.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-prev-month.on-top.on-left.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 29 мая 2023 г.') 29
+												.vc-day.id-2023-05-30.day-30.day-from-end-2.weekday-3.weekday-position-2.weekday-ordinal-5.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-prev-month.on-top.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 30 мая 2023 г.') 30
+												.vc-day.id-2023-05-31.day-31.day-from-end-1.weekday-4.weekday-position-3.weekday-ordinal-5.weekday-ordinal-from-end-0.week-5.week-from-end-1.in-prev-month.on-top.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 31 мая 2023 г.') 31
+												.vc-day.id-2023-06-01.day-1.day-from-end-30.weekday-5.weekday-position-4.weekday-ordinal-1.weekday-ordinal-from-end-5.week-1.week-from-end-5.is-first-day.in-month.on-top.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													.vc-highlights.vc-day-layer(data-v-005dafc8='')
+														.vc-day-layer.vc-day-box-right-center(data-v-005dafc8='')
+															.vc-highlight.vc-highlight-base-start(data-v-005dafc8='' style='background-color: var(--blue-200); opacity: 1; border-radius: var(--rounded-full);')
+														.vc-day-layer.vc-day-box-center-center(data-v-005dafc8='')
+															.vc-highlight(data-v-005dafc8='' style='background-color: var(--blue-600); border-radius: var(--rounded-full);')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 1 июня 2023 г.', tabindex='-1', style='font-weight: var(--font-bold); color: var(--white);') 1
+												.vc-day.id-2023-06-02.day-2.day-from-end-29.weekday-6.weekday-position-5.weekday-ordinal-1.weekday-ordinal-from-end-5.week-1.week-from-end-5.in-month.on-top.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													.vc-highlights.vc-day-layer(data-v-005dafc8='')
+														.vc-day-layer.vc-day-box-left-center(data-v-005dafc8='')
+															.vc-highlight.vc-highlight-base-end(data-v-005dafc8='' style='background-color: var(--blue-200); opacity: 1; border-radius: var(--rounded-full);')
+														.vc-day-layer.vc-day-box-center-center(data-v-005dafc8='')
+															.vc-highlight(data-v-005dafc8='' style='background-color: var(--blue-600); border-radius: var(--rounded-full);')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 2 июня 2023 г.', tabindex='0', style='font-weight: var(--font-bold); color: var(--white);') 2
+												.vc-day.id-2023-06-03.day-3.day-from-end-28.weekday-7.weekday-position-6.weekday-ordinal-1.weekday-ordinal-from-end-4.week-1.week-from-end-5.in-month.on-top.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 3 июня 2023 г.', tabindex='-1', style='') 3
+												.vc-day.id-2023-06-04.day-4.day-from-end-27.weekday-1.weekday-position-7.weekday-ordinal-1.weekday-ordinal-from-end-4.week-1.week-from-end-5.in-month.on-top.on-right.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 4 июня 2023 г.', tabindex='-1', style='') 4
+												.vc-day.id-2023-06-05.day-5.day-from-end-26.weekday-2.weekday-position-1.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-4.in-month.on-left.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 5 июня 2023 г.', tabindex='-1', style='') 5
+												.vc-day.id-2023-06-06.day-6.day-from-end-25.weekday-3.weekday-position-2.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-4.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 6 июня 2023 г.', tabindex='-1', style='') 6
+												.vc-day.id-2023-06-07.day-7.day-from-end-24.weekday-4.weekday-position-3.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-4.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 7 июня 2023 г.', tabindex='-1', style='') 7
+												.vc-day.id-2023-06-08.day-8.day-from-end-23.weekday-5.weekday-position-4.weekday-ordinal-2.weekday-ordinal-from-end-4.week-2.week-from-end-4.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 8 июня 2023 г.', tabindex='-1', style='') 8
+												.vc-day.id-2023-06-09.day-9.day-from-end-22.weekday-6.weekday-position-5.weekday-ordinal-2.weekday-ordinal-from-end-4.week-2.week-from-end-4.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 9 июня 2023 г.', tabindex='-1', style='') 9
+												.vc-day.id-2023-06-10.day-10.day-from-end-21.weekday-7.weekday-position-6.weekday-ordinal-2.weekday-ordinal-from-end-3.week-2.week-from-end-4.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 10 июня 2023 г.', tabindex='-1', style='') 10
+												.vc-day.id-2023-06-11.day-11.day-from-end-20.weekday-1.weekday-position-7.weekday-ordinal-2.weekday-ordinal-from-end-3.week-2.week-from-end-4.in-month.on-right.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 11 июня 2023 г.', tabindex='-1', style='') 11
+												.vc-day.id-2023-06-12.day-12.day-from-end-19.weekday-2.weekday-position-1.weekday-ordinal-2.weekday-ordinal-from-end-3.week-3.week-from-end-3.in-month.on-left.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 12 июня 2023 г.', tabindex='-1', style='') 12
+												.vc-day.id-2023-06-13.day-13.day-from-end-18.weekday-3.weekday-position-2.weekday-ordinal-2.weekday-ordinal-from-end-3.week-3.week-from-end-3.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 13 июня 2023 г.', tabindex='-1', style='') 13
+												.vc-day.id-2023-06-14.day-14.day-from-end-17.weekday-4.weekday-position-3.weekday-ordinal-2.weekday-ordinal-from-end-3.week-3.week-from-end-3.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 14 июня 2023 г.', tabindex='-1', style='') 14
+												.vc-day.id-2023-06-15.day-15.day-from-end-16.weekday-5.weekday-position-4.weekday-ordinal-3.weekday-ordinal-from-end-3.week-3.week-from-end-3.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 15 июня 2023 г.', tabindex='-1', style='') 15
+												.vc-day.id-2023-06-16.day-16.day-from-end-15.weekday-6.weekday-position-5.weekday-ordinal-3.weekday-ordinal-from-end-3.week-3.week-from-end-3.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 16 июня 2023 г.', tabindex='-1', style='') 16
+												.vc-day.id-2023-06-17.day-17.day-from-end-14.weekday-7.weekday-position-6.weekday-ordinal-3.weekday-ordinal-from-end-2.week-3.week-from-end-3.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 17 июня 2023 г.', tabindex='-1', style='') 17
+												.vc-day.id-2023-06-18.day-18.day-from-end-13.weekday-1.weekday-position-7.weekday-ordinal-3.weekday-ordinal-from-end-2.week-3.week-from-end-3.in-month.on-right.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 18 июня 2023 г.', tabindex='-1', style='') 18
+												.vc-day.id-2023-06-19.day-19.day-from-end-12.weekday-2.weekday-position-1.weekday-ordinal-3.weekday-ordinal-from-end-2.week-4.week-from-end-2.in-month.on-left.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 19 июня 2023 г.', tabindex='-1', style='') 19
+												.vc-day.id-2023-06-20.day-20.day-from-end-11.weekday-3.weekday-position-2.weekday-ordinal-3.weekday-ordinal-from-end-2.week-4.week-from-end-2.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 20 июня 2023 г.', tabindex='-1', style='') 20
+												.vc-day.id-2023-06-21.day-21.day-from-end-10.weekday-4.weekday-position-3.weekday-ordinal-3.weekday-ordinal-from-end-2.week-4.week-from-end-2.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 21 июня 2023 г.', tabindex='-1', style='') 21
+												.vc-day.id-2023-06-22.day-22.day-from-end-9.weekday-5.weekday-position-4.weekday-ordinal-4.weekday-ordinal-from-end-2.week-4.week-from-end-2.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 22 июня 2023 г.', tabindex='-1', style='') 22
+												.vc-day.id-2023-06-23.day-23.day-from-end-8.weekday-6.weekday-position-5.weekday-ordinal-4.weekday-ordinal-from-end-2.week-4.week-from-end-2.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 23 июня 2023 г.', tabindex='-1', style='') 23
+												.vc-day.id-2023-06-24.day-24.day-from-end-7.weekday-7.weekday-position-6.weekday-ordinal-4.weekday-ordinal-from-end-1.week-4.week-from-end-2.is-today.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 24 июня 2023 г.', tabindex='-1', style='') 24
+												.vc-day.id-2023-06-25.day-25.day-from-end-6.weekday-1.weekday-position-7.weekday-ordinal-4.weekday-ordinal-from-end-1.week-4.week-from-end-2.in-month.on-right.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 25 июня 2023 г.', tabindex='-1', style='') 25
+												.vc-day.id-2023-06-26.day-26.day-from-end-5.weekday-2.weekday-position-1.weekday-ordinal-4.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-month.on-left.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 26 июня 2023 г.', tabindex='-1') 26
+												.vc-day.id-2023-06-27.day-27.day-from-end-4.weekday-3.weekday-position-2.weekday-ordinal-4.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 27 июня 2023 г.', tabindex='-1') 27
+												.vc-day.id-2023-06-28.day-28.day-from-end-3.weekday-4.weekday-position-3.weekday-ordinal-4.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 28 июня 2023 г.', tabindex='-1') 28
+												.vc-day.id-2023-06-29.day-29.day-from-end-2.weekday-5.weekday-position-4.weekday-ordinal-5.weekday-ordinal-from-end-1.week-5.week-from-end-1.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 29 июня 2023 г.', tabindex='-1') 29
+												.vc-day.id-2023-06-30.day-30.day-from-end-1.weekday-6.weekday-position-5.weekday-ordinal-5.weekday-ordinal-from-end-1.week-5.week-from-end-1.is-last-day.in-month.vc-day-box-center-center(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 30 июня 2023 г.', tabindex='-1') 30
+												.vc-day.id-2023-07-01.day-1.day-from-end-31.weekday-7.weekday-position-6.weekday-ordinal-1.weekday-ordinal-from-end-5.week-1.week-from-end-6.in-next-month.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 1 июля 2023 г.') 1
+												.vc-day.id-2023-07-02.day-2.day-from-end-30.weekday-1.weekday-position-7.weekday-ordinal-1.weekday-ordinal-from-end-5.week-1.week-from-end-6.in-next-month.on-right.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 2 июля 2023 г.') 2
+												.vc-day.id-2023-07-03.day-3.day-from-end-29.weekday-2.weekday-position-1.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.on-left.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='понедельник, 3 июля 2023 г.') 3
+												.vc-day.id-2023-07-04.day-4.day-from-end-28.weekday-3.weekday-position-2.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='вторник, 4 июля 2023 г.') 4
+												.vc-day.id-2023-07-05.day-5.day-from-end-27.weekday-4.weekday-position-3.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='среда, 5 июля 2023 г.') 5
+												.vc-day.id-2023-07-06.day-6.day-from-end-26.weekday-5.weekday-position-4.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='четверг, 6 июля 2023 г.') 6
+												.vc-day.id-2023-07-07.day-7.day-from-end-25.weekday-6.weekday-position-5.weekday-ordinal-1.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='пятница, 7 июля 2023 г.') 7
+												.vc-day.id-2023-07-08.day-8.day-from-end-24.weekday-7.weekday-position-6.weekday-ordinal-2.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='суббота, 8 июля 2023 г.') 8
+												.vc-day.id-2023-07-09.day-9.day-from-end-23.weekday-1.weekday-position-7.weekday-ordinal-2.weekday-ordinal-from-end-4.week-2.week-from-end-5.in-next-month.on-bottom.on-right.vc-day-box-center-center.is-not-in-month(data-v-005dafc8='' data-v-37fb1233='')
+													span.vc-day-content.vc-focusable(data-v-005dafc8='', role='button', aria-disabled='false', aria-label='воскресенье, 9 июля 2023 г.') 9
+									.vc-arrows-container.title-center
+										.vc-arrow.is-left(role='button')
+											svg.vc-svg-icon(data-v-19b6cf78='' width='26px' height='26px' viewBox='0 -1 16 34')
+												path(data-v-19b6cf78='' d='M11.196 10c0 0.143-0.071 0.304-0.179 0.411l-7.018 7.018 7.018 7.018c0.107 0.107 0.179 0.268 0.179 0.411s-0.071 0.304-0.179 0.411l-0.893 0.893c-0.107 0.107-0.268 0.179-0.411 0.179s-0.304-0.071-0.411-0.179l-8.321-8.321c-0.107-0.107-0.179-0.268-0.179-0.411s0.071-0.304 0.179-0.411l8.321-8.321c0.107-0.107 0.268-0.179 0.411-0.179s0.304 0.071 0.411 0.179l0.893 0.893c0.107 0.107 0.179 0.25 0.179 0.411z')
+										.vc-arrow.is-right(role='button')
+											svg.vc-svg-icon(data-v-19b6cf78='' width='26px' height='26px' viewBox='-5 -1 16 34')
+												path(data-v-19b6cf78='' d='M10.625 17.429c0 0.143-0.071 0.304-0.179 0.411l-8.321 8.321c-0.107 0.107-0.268 0.179-0.411 0.179s-0.304-0.071-0.411-0.179l-0.893-0.893c-0.107-0.107-0.179-0.25-0.179-0.411 0-0.143 0.071-0.304 0.179-0.411l7.018-7.018-7.018-7.018c-0.107-0.107-0.179-0.268-0.179-0.411s0.071-0.304 0.179-0.411l0.893-0.893c0.107-0.107 0.268-0.179 0.411-0.179s0.304 0.071 0.411 0.179l8.321 8.321c0.107 0.107 0.179 0.268 0.179 0.411z')
+								
+								.vc-popover-content-wrapper(data-v-05016e86='')
+									// 
+							.moda-date__btns
+								button.moda-date__btn.btn.btn-warning.btn-sm Очистить
+								button.moda-date__btn.btn.btn-primary.btn-sm Фильтровать
+
+				.col
+					+e.step--content
+						block
+mixin ChatPage(data)
+	+chatBody()
+		+e.contact-item
+			+e.tel.strong  Георгий
+			+icon("mail")
+			+e.tel.ms-auto  +38092836574
+			+e.close-btn.d-md-none
+				+icon("chevron-left")
+		+e.messanger
+			+e.messanger-body
+				+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+				+e.mess Нас будет 4 человека
+				+e.mess--right Добрый день, за Вами забронирован стол номер 8, пожалуйста, не задерживайтесь, хорошего дня!
+				+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+				+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+				+e.mess Здравствуйте, можно ли забронировать стол? Необходимо в 20 часов вечера, самый крайний, пожалуйста.
+				+e.mess--right Добрый день, за Вами забронирован стол номер 8, пожалуйста, не задерживайтесь, хорошего дня!
+			+e.messanger-footer
+				textarea.form-control(placeholder='Введите текст сообщения')
+				+e.btn(type="submit").btn.btn-primary
+					+icon("tabler_send") 
+mixin ChatPageEmpty(data)
+	+chatBody()
+		+e.label Выберите чат

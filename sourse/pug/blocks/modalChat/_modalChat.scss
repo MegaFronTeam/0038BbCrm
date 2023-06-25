@@ -1,0 +1,233 @@
+// start .modalChat
+.modalChat {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	position: fixed;
+		right: 20px;
+		bottom: 20px;
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+
+	&__toggle{
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		height: 40px;
+		min-width: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+		
+		color: #fff;
+		border-radius: 5px;
+		background: #14988B;
+		@include mt;
+		&:hover{
+			
+			background: #0b867a;
+		}
+		img{
+			flex: 0 0 auto;
+		}
+		.text{
+			margin-left: 10px;
+			font-size: 14px;
+			min-width: 140px;
+		}
+	}
+	&__body{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		border-radius: 5px;
+		border: 1px solid #ECF0F5;
+		margin-right: -5px;
+		// overflow: hidden
+		box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.25);;
+		
+	}
+	.chat-block{
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.modalChat
+
+
+.chat-block{
+	&__menu{
+		background: var(--3, #ECF0F5);
+	}
+	font-size: 12px;
+	&__step{
+		background-color: #fff;
+	}
+	&__step-head{
+		display: flex;
+		justify-content: space-between;
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+			font-size: 20px;
+			padding: 15px 10px;
+		}
+		&__btn-back{
+		.icon{
+			font-size: 12px;
+
+		}	
+		.icon-chevron-left{
+			color: #244899;
+		}
+		cursor: pointer;
+		color: #828282;
+	}
+	&__step-body{
+		overflow-y: auto;
+		max-height: 150px;
+	}
+	&__contact-item{
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		padding: 16px 8px; 
+		background: var(--3, #ECF0F5);
+		@include roww(10px, 0, m);
+		border-bottom: 2px solid #fff;
+		margin-left: 0;
+		cursor: pointer;
+		@include mt;
+		margin-right: 0;
+		&.active,
+		&:hover{
+			background-color: #fff;
+		}
+		.icon{
+			color: #478ECC;
+			font-size: 15px;
+			// margin-right: auto;
+			// padding-right: 10px;
+			flex: 0 0 auto;
+		}
+		.chat-block__close-btn{
+			margin-left: auto;
+			.icon{
+				fill: none;
+				stroke: currentColor;
+				font-size: 12px;
+			}
+		}
+		padding-right: 20px;
+		position: relative;
+		&--new{
+			&::after{
+				position: absolute;
+				content: '';
+				border-radius: 5px;
+				background: #244899;
+				width: 5px;
+				height: 5px;
+				margin-left: 10px;
+				margin-right: 10px;
+				right: 0;
+			}
+		}
+	}
+	&__time{
+		color: #828282; 
+		margin-left: auto;
+		padding-left: 10px;
+	}
+	&__step-body{
+		max-height: 150px;
+		@extend .custom-scroll;
+	}
+	&__step--content{
+		border: 2px solid #ECF0F5;
+		width: 214px;
+		.chat-block__contact-item{
+			padding-top: 8px;
+			padding-bottom: 8px;
+			height: 40px;
+		}
+	}
+	&__messanger{
+		padding: 10px;
+		 padding-right: 2px;
+		
+	}
+	&__messanger-body{
+		overflow-y: auto;
+		position: relative;
+		height: 351px;
+		@extend .custom-scroll;
+		padding-right: 5px;
+	}
+	&__mess{
+		padding: 10px;
+		margin-bottom: 10px;
+		border-radius: 0px 8px 8px 5px;
+		background: var(--3, #ECF0F5);
+		max-width: 176px;
+		&--right{
+			border-radius: 0px 8px 8px 5px;
+			background: #244899;
+			color: #fff;
+			margin-left: auto;
+		}
+	}
+	&__messanger-footer{
+		padding-top: 10px; 
+		position: relative;
+		.form-control{
+			border-radius: 5px;
+			background: var(--3, #ECF0F5);
+			font-size: 12px;
+			border: 1px solid var(--3, #ECF0F5);
+		}
+	}
+	&__btn{ 
+		padding: 0;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 20px;
+		right: 10px;
+		position: absolute;
+		.icon{
+			font-size: 13px;
+			fill: none;
+			stroke: currentColor;
+		}
+	}
+	&__row{
+		@include roww(0)
+	}
+}
+
+.chat-block__label{
+	margin: 15px;
+	border-radius: 5px;
+	background: rgba(20, 152, 139, 0.10);
+	color: #14988B;
+	font-size: 14px;
+	padding: 12px 20px;
+}
