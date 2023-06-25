@@ -523,14 +523,15 @@ iframe {
 			&__aside-col{
 			
 			}
+			.table-wrap,
 			.aside-dropdown{
 
 				height: var(--max-h);
+				padding-bottom: env(safe-area-inset-bottom, 0px);
 			}
 			&__aside-col,
 			&__main-col{
 				height: var(--max-h);
-				padding-bottom: env(safe-area-inset-bottom, 0px);
 			}
 			.vc-pane-container .vc-weeks{
 				min-width: 1px;
@@ -644,10 +645,13 @@ iframe {
 				  .calendar-wrap .vc-container .range .pickmeup,   .calendar-wrap .vc-container .vc-pane{
 						background-color: #fff;
 					}
+					.table-wrap{
 
-					&__main-col{ 
 						@extend .custom-scroll;
 						overflow: auto;
+						display: inline-block;
+					}
+					&__main-col{ 
 						// overflow-x: auto;
 						table{
 							// minwidth: 100%;

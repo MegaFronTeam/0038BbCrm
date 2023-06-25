@@ -175,66 +175,67 @@ block pagecontent
 							+item("АВГУСТ")
 							+item("СЕНТЯБРЬ")
 				+e.main-col.col
-					table
-						thead
-							tr
-								th 
-								th №1 Пул
-								th №2 Пул
-								th №3 Пул
-								th №4 Пул
-								th №5 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-								th №6 Пул
-						tbody
-							mixin td(t, t2)
+					.table-wrap
+						table
+							thead
 								tr
-									td= t
-									td 
-									td 
-									td 
-									td 
-									td 
-									td 
-									td 
-									if block
-										td.active
-											block
-									else
-										td
-									td 
-									td 
-									td 
-									td 
-									td 
-							+td(`07:00`)
-								| 07:30-11:00
-								br
-								| Иванов Сергей
-								br
-								| 099-789-89-89
-							+td(`08:00`)
-								|
-							+td(`09:00`)
-								|
-							+td(`10:00`)
-								|
-							+td(`11:00`)
-							+td(`12:00`)
-							+td(`13:00`)
-							+td(`14:00`)
-							+td(`15:00`)
-							+td(`16:00`)
-							+td(`17:00`)
-							+td(`18:00`)
-							+td(`19:00`)
-							+td(`20:00`)
-							+td(`21:00`)
-							+td(`22:00`)
-							+td(`23:00`)
+									th 
+									th №1 Пул
+									th №2 Пул
+									th №3 Пул
+									th №4 Пул
+									th №5 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+									th №6 Пул
+							tbody
+								mixin td(t, t2)
+									tr
+										td= t
+										td 
+										td 
+										td 
+										td 
+										td 
+										td 
+										td 
+										if block
+											td.active
+												block
+										else
+											td
+										td 
+										td 
+										td 
+										td 
+										td 
+								+td(`07:00`)
+									| 07:30-11:00
+									br
+									| Иванов Сергей
+									br
+									| 099-789-89-89
+								+td(`08:00`)
+									|
+								+td(`09:00`)
+									|
+								+td(`10:00`)
+									|
+								+td(`11:00`)
+								+td(`12:00`)
+								+td(`13:00`)
+								+td(`14:00`)
+								+td(`15:00`)
+								+td(`16:00`)
+								+td(`17:00`)
+								+td(`18:00`)
+								+td(`19:00`)
+								+td(`20:00`)
+								+td(`21:00`)
+								+td(`22:00`)
+								+td(`23:00`)
