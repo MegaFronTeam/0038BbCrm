@@ -15,7 +15,7 @@ function eventHandler() {
 		mousewheel: true,
 	});
 	$(".toggle-aside-js").on("click", function(){
-		$(".aside-dropdown").toggleClass("d-none")
+		$(".bookink-block").toggleClass("active");
 	})
 };
 if (document.readyState !== 'loading') {

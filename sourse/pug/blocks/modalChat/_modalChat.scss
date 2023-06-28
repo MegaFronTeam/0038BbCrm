@@ -84,6 +84,7 @@
 		justify-content: space-between;
 		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 			font-size: 20px;
+			background-color: #fff;
 			padding: 15px 10px;
 		}
 		&__btn-back{
@@ -159,7 +160,7 @@
 	}
 	&__step--content{
 		border: 2px solid #ECF0F5;
-		width: 214px;
+		width: 284px;
 		.chat-block__contact-item{
 			padding-top: 8px;
 			padding-bottom: 8px;
@@ -183,7 +184,7 @@
 		margin-bottom: 10px;
 		border-radius: 0px 8px 8px 5px;
 		background: var(--3, #ECF0F5);
-		max-width: 176px;
+		max-width: 206px;
 		&--right{
 			border-radius: 0px 8px 8px 5px;
 			background: #244899;
@@ -199,6 +200,8 @@
 			background: var(--3, #ECF0F5);
 			font-size: 12px;
 			border: 1px solid var(--3, #ECF0F5);
+			resize: none;
+			@extend .custom-scroll;
 		}
 	}
 	&__btn{ 

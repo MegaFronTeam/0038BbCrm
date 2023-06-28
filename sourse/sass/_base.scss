@@ -460,6 +460,10 @@ iframe {
 	padding: 0;
 	border-radius: 6px;
 	margin-top: 20px;
+	background: #ecf0f5;
+	  .calendar-wrap .vc-container .range .pickmeup,   .calendar-wrap .vc-container .vc-pane {
+			box-shadow: none;
+		}
 	.fancybox-close-small{
 		// right: -40px;
 		top: -40px;
@@ -473,6 +477,16 @@ iframe {
 }
 
 .bookink-block{
+	--aside-h: 40px;
+	&:not(.active){
+
+		.aside-dropdown{
+			display: none !important;
+		}
+	}
+	&.active{ 
+		--aside-h: 180px;
+	}
 	&__aside-col{
 		
 	}
@@ -650,8 +664,10 @@ iframe {
 						@extend .custom-scroll;
 						overflow: auto;
 						display: inline-block;
+						max-width: 100%;
 					}
 					&__main-col{ 
+						max-width: calc(100% - var(--aside-h));
 						// overflow-x: auto;
 						table{
 							// minwidth: 100%;
