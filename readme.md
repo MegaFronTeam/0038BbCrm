@@ -2,3 +2,4 @@
 2. <https://megafronteam.github.io/0038BbCrm/public/02-chat-empty.html>
 3. <https://megafronteam.github.io/0038BbCrm/public/02-chat.html>
 4. <https://megafronteam.github.io/0038BbCrm/public/03-booking.html>
+5. <https://megafronteam.github.io/0038BbCrm/public/03-tennis-table.html>

@@ -17,6 +17,12 @@ function eventHandler() {
 	$(".toggle-aside-js").on("click", function(){
 		$(".bookink-block").toggleClass("active");
 	})
+	
+	$(document).on("click", '.status-block__toggle', function(){
+		$(this).toggleClass('active');
+		$(this).next().slideToggle();
+	})
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

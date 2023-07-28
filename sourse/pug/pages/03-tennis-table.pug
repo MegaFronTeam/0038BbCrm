@@ -1,0 +1,415 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sOpen/_sOpen.pug
+include ../blocks/modalChat/_modalChat.pug
+include ../blocks/ChatPage/_ChatPage.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Бронирования'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	
+	.user.user--tennis
+		.row|
+			.col-xl-12
+				.user__title
+					h2  Бронювання
+			//- .col-xl-6.col-md-12
+			//- 	+calendar()
+			//- .col-xl-6.col-md-12
+			//- 	.user_top.user_top-righit
+			//- 		form
+			//- 			input(type='text' placeholder='Найти бронь...')
+			//- 			button(type='submit')
+			//- 				img(src='img/search.svg' alt='search')
+			//- 		button.append Додати
+		+b.bookink-block--tennis
+			.table-wrap
+				table
+					thead
+						tr
+							th Время
+							th 1 ХАРД
+							th 2 ХАРД
+							th(style="background: #FE7F53;") ПИРАМИДА #115
+							th(style="background: #828282;") Лист ожидания
+							th 2 ХАРД
+							th 2 ХАРД
+							th 2 ХАРД
+					tbody
+						mixin td(t, t2)
+							tr.start-line
+								th(rowspan='2' scope="row")&attributes(attributes)= t
+								block
+								
+						mixin td2(t, t2)
+							tr
+								block
+						mixin td-inner()
+							.strong Групповое занятие
+							if block 
+								block
+							else
+								div.text-color(style="color: #14988B;") Штатный тренер: 
+									span.strong.name(data-src="#modal-trener" data-fancybox) Иванов И.С 
+							div Время занятия с 7.00 до 8.00
+
+							+b.dropdown-pers 
+								+e.text Список участников
+								+e.block
+									+e.item Алексей И.П.
+									+e.item Елена С. К.
+									+e.item Максим А.С.
+									+e.item Ольга Н.В.
+									+e.item Дмитрий В.Л.
+									+e.item Наталья А.М.
+									+e.item Иван П.К.
+									+e.item Анна М.Ф.
+
+						+td('7.00 - 8.00')(style="background: #FE7F53;")
+							td(class="active" rowspan='7') 
+								+td-inner()
+									div.text-color( ) Пользователь: 
+										span.strong.name Сергей И.И 
+							td(class="active" rowspan='5') 
+								+td-inner()
+							td(class="active" rowspan='2') 
+							td(class="" rowspan='2') 
+								.td-inner
+									div Максим А.С.    
+									div Корт №ХАРД 4 на 19.00
+									div.text-secondary Желательно (с 17.00 до 20.00)
+									a.icon-link(href="#")
+										img(src="img/icon-link-1.svg", alt="")
+							td(class="active" rowspan='2') 
+							td(class="active" rowspan='2') 
+							td(class="active" rowspan='2') 
+						+td2()
+						// 2tr
+						+td(`8.00-9.00`)(style="background: #FE7F53;")
+							- for (var x = 0; x < 1; x++)
+								td(rowspan='2' )
+							td(class="" rowspan='2' disabled="disabled") 
+								.td-inner
+									div Максим А.С.    
+									div Корт №ХАРД 4 на 19.00
+									div.text-secondary Желательно (с 17.00 до 20.00)
+									a.icon-link(href="#")
+										img(src="img/icon-link-1.svg", alt="")
+							- for (var x = 0; x < 3; x++)
+								td(rowspan='2')
+						+td2 
+						// 2tr
+						+td(`9.00-10.00`)
+							td(rowspan="1")
+							td(class="" rowspan='2' style="background: #B6F5D4" ) 
+								.td-inner
+									div Максим А.С.    
+									div Корт №ХАРД 4 на 19.00
+									div.text-secondary Желательно (с 17.00 до 20.00)
+									a.icon-link(href="#")
+										img(src="img/icon-link-1.svg", alt="")
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="1")
+						+td2
+							- for (var x = 0; x < 5; x++)
+								td(rowspan="1")
+							//- td
+							//- td.active(rowspan='4')
+							//- 	+td-inner()
+							//- 		div.text-color(style="color: #FE7F53;" ) Тренер:
+							//- 			span.strong.name  Иванов И.С
+							//- - for (var x = 0; x < 2; x++)
+							//- 	td(colspan="2")
+						// 2tr
+						+td(`10.00-11.00`)
+							td(rowspan="1")
+							td(rowspan="1")
+							td(class="" rowspan='2' style="background: #FEB386") 
+								.td-inner
+									div Максим А.С.    
+									div Корт №ХАРД 4 на 19.00
+									div.text-secondary Желательно (с 17.00 до 20.00)
+									a.icon-link(href="#")
+										img(src="img/icon-link-1.svg", alt="")
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="1")
+						+td2
+							- for (var x = 0; x < 6; x++)
+								td(rowspan="1")
+						// 2tr
+						+td(`11.00-12.00`)
+							td
+							- for (var x = 0; x < 2; x++)
+								td(rowspan="2")
+							td(class="" rowspan='2' style="background: #DEDEDE") 
+							td
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="2")
+						+td2
+						// 2tr
+						+td(`12.00-13.00`)
+							td
+							- for (var x = 0; x < 2; x++)
+								td(rowspan="2")
+							td(class="" rowspan='2' style="background: #DEDEDE") 
+							td
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="2")
+						+td2
+						// 2tr
+						+td(`13.00-14.00`)
+							td
+							- for (var x = 0; x < 2; x++)
+								td(rowspan="2")
+							td(class="" rowspan='2' style="background: #DEDEDE") 
+							td
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="2")
+						+td2
+						// 2tr
+						+td(`14.00-15.00`)
+							td
+							- for (var x = 0; x < 2; x++)
+								td(rowspan="2")
+							td(class="" rowspan='2' style="background: #DEDEDE") 
+							td
+							- for (var x = 0; x < 3; x++)
+								td(rowspan="2")
+						+td2
+						// 2tr
+						//- +td(`15.00-16.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						
+						//- +td(`16.00-17.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						//- +td(`17.00-18.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						//- +td(`18.00-19.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						//- +td(`19.00-20.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						//- +td(`20.00-21.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						//- // 2tr
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td(`21.00-22.00`)
+						//- 	- for (var x = 0; x < 7; x++)
+						//- 		td(rowspan="2")
+						//- +td2
+						// 2tr
+			+b.modal-trener#modal-trener(style="display: none")
+				+e.row.row
+					.col-auto
+						+b.avatar-block
+							+e.img-wrap
+								img(src="img/avatar-img.png", alt="")
+							+e.soc
+								a(href="#") 
+									img(src="img/fb.svg", alt="")
+								a(href="#") 
+									img(src="img/viber.svg", alt="")
+								a(href="#") 
+									img(src="img/tg.svg", alt="")
+						+b.star-block
+							- for (var x = 0; x < 4; x++)
+								<svg class='active' xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" >
+									<path d="M8.5 12.8589L13.753 16L12.359 10.08L17 6.09684L10.8885 5.57474L8.5 0L6.1115 5.57474L0 6.09684L4.6325 10.08L3.247 16L8.5 12.8589Z"  />
+								</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" >
+								<path d="M8.5 12.8589L13.753 16L12.359 10.08L17 6.09684L10.8885 5.57474L8.5 0L6.1115 5.57474L0 6.09684L4.6325 10.08L3.247 16L8.5 12.8589Z"  />
+							</svg>
+					.col
+						+e.line--title(style="color: #14988B;") Штатный тренер
+						+e.line Иван Зеньченко Иванович
+						+e.line Специализация: Теннис, Массаж, ОФП
+						+e.line--links 
+							span.text-secondary Номер телефона:
+							+e.links
+								a(href="mailto:") BbCrm123456789@gmail.com
+						+e.line--links 
+							span.text-secondary Email:
+							+e.links
+								a(href="tel:+(380)961271256") +(380) 96 127 12 56
+								|,
+								a(href="tel:+(380)961271256") +(380) 96 127 12 56
+								|,
+								a(href="tel:+(380)961271256")  +(380) 96 127 12 56
+								|,
+								a(href="tel:+(380)961271256")  +(380) 96 127 12 56
+								| 
+					.col-auto
+						+b.status-block
+							div Баланс: 1000
+							div Ставка: 350
+							div Процент: 10%
+						+b.status-block--dropdown
+							+e.toggle Баланс: 10 000
+								+e.close
+
+							+e.body
+								div Баланс: 1000
+								div Депозит (Теннис): 2 часа
+								div Депозит (Массаж): 8 часов
+								div Подарочные сертификаты:
+								+b.status-block--dropdown
+									+e.toggle ОФП - 300 грн
+										+e.close
+									+e.body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, fugiat.
+									
+								+b.status-block--dropdown
+									+e.toggle Аренда корта - 2 часа
+										+e.close
+									+e.body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, fugiat.
+								.strong Скидки:
+								+b.status-block--dropdown
+									+e.toggle ОФП 20% на 1 сеанс
+										+e.close
+									+e.body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, fugiat.
+								+b.status-block--dropdown
+									+e.toggle Теннис 10% на комплекс
+										+e.close
+									+e.body Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, fugiat.
+				+e.btns
+					.row
+						.col-auto
+							+e.btn.btn.btn-primary(type="button") Отправить график
+						.col
+							+e.btn.btn.btn-warning(type="button") Посмотреть график
+						.col-auto
+							+e.btn.btn.btn-outline-primary(type="button")
+								| История
+								<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 11" fill="currentColor">
+									<path d="M13.4856 5.77198L8.42313 10.8345C8.34315 10.909 8.23738 10.9496 8.12808 10.9476C8.01879 10.9457 7.91451 10.9014 7.83721 10.8241C7.75992 10.7468 7.71564 10.6426 7.71371 10.5333C7.71179 10.424 7.75235 10.3182 7.82687 10.2382L12.1687 5.89573H0.8125C0.700612 5.89573 0.593306 5.85128 0.514189 5.77216C0.435072 5.69305 0.390625 5.58574 0.390625 5.47385C0.390625 5.36196 0.435072 5.25466 0.514189 5.17554C0.593306 5.09642 0.700612 5.05198 0.8125 5.05198H12.1687L7.82687 0.709477C7.75235 0.629503 7.71179 0.523727 7.71371 0.414433C7.71564 0.305138 7.75992 0.200859 7.83721 0.123564C7.91451 0.0462695 8.01879 0.0019941 8.12808 6.57266e-05C8.23738 -0.00186265 8.34315 0.0387065 8.42313 0.113227L13.4856 5.17573C13.5646 5.25483 13.609 5.36205 13.609 5.47385C13.609 5.58565 13.5646 5.69288 13.4856 5.77198Z"  />
+									</svg>
+				table
+					- for (var x = 0; x < 3; x++)
+						tr
+							td.text-center 14 сентября 
+							td Теннис - корт #ПИРАМИДА 114 с 17.00 до 20.00   
+							td.text-end
+								+b.dropdown-pers 
+									+e.text Список участников
+									+e.block
+										+e.item Алексей И.П.
+										+e.item Елена С. К.
+										+e.item Максим А.С.
+										+e.item Ольга Н.В.
+										+e.item Дмитрий В.Л.
+										+e.item Наталья А.М.
+										+e.item Иван П.К.
+										+e.item Анна М.Ф.
+
+
+										
+				+e.btns
+					.row
+						.col-auto
+							+e.btn.btn.btn-primary(type="button") История платежей
+						.col
+							+e.btn.btn.btn-warning(type="button") Отзывы
+						.col-auto
+							+e.btn.btn.btn-primary(type="button")
+								| Связанные лица
+								<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 11" fill="currentColor">
+									<path d="M13.4856 5.77198L8.42313 10.8345C8.34315 10.909 8.23738 10.9496 8.12808 10.9476C8.01879 10.9457 7.91451 10.9014 7.83721 10.8241C7.75992 10.7468 7.71564 10.6426 7.71371 10.5333C7.71179 10.424 7.75235 10.3182 7.82687 10.2382L12.1687 5.89573H0.8125C0.700612 5.89573 0.593306 5.85128 0.514189 5.77216C0.435072 5.69305 0.390625 5.58574 0.390625 5.47385C0.390625 5.36196 0.435072 5.25466 0.514189 5.17554C0.593306 5.09642 0.700612 5.05198 0.8125 5.05198H12.1687L7.82687 0.709477C7.75235 0.629503 7.71179 0.523727 7.71371 0.414433C7.71564 0.305138 7.75992 0.200859 7.83721 0.123564C7.91451 0.0462695 8.01879 0.0019941 8.12808 6.57266e-05C8.23738 -0.00186265 8.34315 0.0387065 8.42313 0.113227L13.4856 5.17573C13.5646 5.25483 13.609 5.36205 13.609 5.47385C13.609 5.58565 13.5646 5.69288 13.4856 5.77198Z"  />
+									</svg>
+				table.rews
+					- for (var x = 0; x < 3; x++)
+						tr
+							td.text-center
+								+e.img-wrap--rews
+									img(src="img/avatar-img.png", alt="")
+							td 
+								+e.name Ольга Н.В. 
+								+e.date  14 сентября 2022
+							td 
+								+b.star-block
+									- for (var x = 0; x < 3; x++)
+										<svg class='active' xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" >
+											<path d="M8.5 12.8589L13.753 16L12.359 10.08L17 6.09684L10.8885 5.57474L8.5 0L6.1115 5.57474L0 6.09684L4.6325 10.08L3.247 16L8.5 12.8589Z"  />
+										</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" >
+										<path d="M8.5 12.8589L13.753 16L12.359 10.08L17 6.09684L10.8885 5.57474L8.5 0L6.1115 5.57474L0 6.09684L4.6325 10.08L3.247 16L8.5 12.8589Z"  />
+									</svg>
+									<svg class="star-danger" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" >
+										<path d="M8.5 12.8589L13.753 16L12.359 10.08L17 6.09684L10.8885 5.57474L8.5 0L6.1115 5.57474L0 6.09684L4.6325 10.08L3.247 16L8.5 12.8589Z"  />
+									</svg>
+								p Хвалили тренера за индивидуальный подход к детям. Просили передать слова благодарности.
+				+pugin()
+
+				+e.btns
+					.row
+						.col-auto
+							+e.btn.btn.btn-primary(type="button") История платежей
+						.col
+							+e.btn.btn.btn-warning(type="button") Отзывы
+						.col-auto
+							+e.btn.btn.btn-primary(type="button")
+								| Связанные лица
+								<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 11" fill="currentColor">
+									<path d="M13.4856 5.77198L8.42313 10.8345C8.34315 10.909 8.23738 10.9496 8.12808 10.9476C8.01879 10.9457 7.91451 10.9014 7.83721 10.8241C7.75992 10.7468 7.71564 10.6426 7.71371 10.5333C7.71179 10.424 7.75235 10.3182 7.82687 10.2382L12.1687 5.89573H0.8125C0.700612 5.89573 0.593306 5.85128 0.514189 5.77216C0.435072 5.69305 0.390625 5.58574 0.390625 5.47385C0.390625 5.36196 0.435072 5.25466 0.514189 5.17554C0.593306 5.09642 0.700612 5.05198 0.8125 5.05198H12.1687L7.82687 0.709477C7.75235 0.629503 7.71179 0.523727 7.71371 0.414433C7.71564 0.305138 7.75992 0.200859 7.83721 0.123564C7.91451 0.0462695 8.01879 0.0019941 8.12808 6.57266e-05C8.23738 -0.00186265 8.34315 0.0387065 8.42313 0.113227L13.4856 5.17573C13.5646 5.25483 13.609 5.36205 13.609 5.47385C13.609 5.58565 13.5646 5.69288 13.4856 5.77198Z"  />
+									</svg>
+				table 
+					- for (var x = 0; x < 3; x++)
+						tr
+							td.text-center
+									img(src="img/calendTba.svg", alt="") 
+							td  12.10.2020
+							td Вывод средств: -5000
+							td Остаток: 10 200 
+							td На карту: Visa 4444 1578 3245 8096
+				+pugin()
+
+				+e.btns
+					.row
+						.col-auto
+							+e.btn.btn.btn-primary(type="button") История платежей
+						.col
+							+e.btn.btn.btn-warning(type="button") Отзывы
+						.col-auto
+							+e.btn.btn.btn-primary(type="button")
+								| Связанные лица
+								<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 14 11" fill="currentColor">
+									<path d="M13.4856 5.77198L8.42313 10.8345C8.34315 10.909 8.23738 10.9496 8.12808 10.9476C8.01879 10.9457 7.91451 10.9014 7.83721 10.8241C7.75992 10.7468 7.71564 10.6426 7.71371 10.5333C7.71179 10.424 7.75235 10.3182 7.82687 10.2382L12.1687 5.89573H0.8125C0.700612 5.89573 0.593306 5.85128 0.514189 5.77216C0.435072 5.69305 0.390625 5.58574 0.390625 5.47385C0.390625 5.36196 0.435072 5.25466 0.514189 5.17554C0.593306 5.09642 0.700612 5.05198 0.8125 5.05198H12.1687L7.82687 0.709477C7.75235 0.629503 7.71179 0.523727 7.71371 0.414433C7.71564 0.305138 7.75992 0.200859 7.83721 0.123564C7.91451 0.0462695 8.01879 0.0019941 8.12808 6.57266e-05C8.23738 -0.00186265 8.34315 0.0387065 8.42313 0.113227L13.4856 5.17573C13.5646 5.25483 13.609 5.36205 13.609 5.47385C13.609 5.58565 13.5646 5.69288 13.4856 5.77198Z"  />
+									</svg>
+				p Тренируется ребенок:  
+					span.tdu Максим А.С, Максим А.С, Максим А.С.
+				p Тренирует муж: 
+					span.tdu  Иванов И.С 
+				p Тренирует сестра: 
+					span.tdu  Иванов И.С 
+				p Тренирует брат: 
+					span.tdu  Иванов И.С 
