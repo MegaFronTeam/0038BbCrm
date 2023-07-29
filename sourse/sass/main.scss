@@ -94,6 +94,14 @@ $output-bourbon-deprecation-warnings: false;
   background: transparent;
   border-color: #fff;
   color: $body-color;
+  width: auto;
+  border: 1px solid #FFF;
+  background: #ECF0F5;
+  height: auto;
+  display: inline-block;
+  border-radius: 0;
+  line-height: inherit;
+  margin-right: 2px;
 }
 
 .pagination-wrapper li {

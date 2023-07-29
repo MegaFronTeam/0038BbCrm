@@ -28,15 +28,341 @@ block pagecontent
 			.col-xl-12
 				.user__title
 					h2  Бронювання
-			//- .col-xl-6.col-md-12
-			//- 	+calendar()
-			//- .col-xl-6.col-md-12
-			//- 	.user_top.user_top-righit
-			//- 		form
-			//- 			input(type='text' placeholder='Найти бронь...')
-			//- 			button(type='submit')
-			//- 				img(src='img/search.svg' alt='search')
-			//- 		button.append Додати
+			.col-xl-6.col-md-12
+				+calendar()
+			.col-xl-6.col-md-12
+				.user_top.user_top-righit
+					form
+						input(type='text' placeholder='Найти бронь...')
+						button(type='submit')
+							img(src='img/search.svg' alt='search')
+						p.mt-3 Недавние бронирования 
+							span.text-secondary (24.01.2020)
+						+b.bookinkg-list
+							- for (var x = 0; x < 4; x++)
+								+b.bookinkg-item
+									.row
+										.col-auto
+											<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+												<path d="M9 0C4.02991 0 0 4.02991 0 9C0 13.9701 4.02991 18 9 18C13.9701 18 18 13.9701 18 9C18 4.02991 13.9701 0 9 0ZM9 16.4732C4.87366 16.4732 1.52679 13.1263 1.52679 9C1.52679 4.87366 4.87366 1.52679 9 1.52679C13.1263 1.52679 16.4732 4.87366 16.4732 9C16.4732 13.1263 13.1263 16.4732 9 16.4732Z" fill="#478ECC"/>
+												<path d="M11.9366 11.8329L9.2208 9.58087V4.17474C9.2208 4.07863 9.15223 4 9.06844 4H8.15236C8.06856 4 8 4.07863 8 4.17474V10.1903C8 10.2471 8.02285 10.2995 8.06285 10.3323L11.2129 12.9665C11.2815 13.0233 11.3767 13.0058 11.4262 12.9294L11.9709 12.0775C12.0204 11.9967 12.0052 11.8875 11.9366 11.8329Z" fill="#478ECC"/>
+												</svg>
+										.col-auto 15:30 - 17:30
+										.col-auto
+											img(src="img/avatar-img.png", alt="")
+										.col
+											+e.name Казаков Э. М.
+										.col-auto
+											button.btn.btn-success 
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+													<path d="M17.1875 2.77124C16.6609 2.77124 16.1452 2.97543 15.7479 3.3728L8.9375 10.1619C8.83934 10.26 8.77254 10.3851 8.74556 10.5213L8.74431 10.5276L8.27131 12.9339C8.17046 13.4084 8.59221 13.8294 9.06675 13.7286L11.473 13.2556L11.4787 13.2545C11.6148 13.2274 11.7399 13.1606 11.8381 13.0624L18.6271 6.25205C18.9117 5.96678 19.1054 5.60366 19.1839 5.20845C19.2623 4.81325 19.222 4.40366 19.0681 4.03132C18.9141 3.65898 18.6534 3.34055 18.3187 3.11618C17.984 2.89182 17.5904 2.77224 17.1875 2.77124ZM17.1875 4.10362C17.3484 4.10362 17.5072 4.18612 17.6605 4.33943C17.9664 4.64605 17.9664 4.9788 17.6605 5.28474L11.1431 11.8028C11.0498 11.8961 10.931 11.9597 10.8016 11.9856C10.3338 12.0792 9.92137 11.6668 10.015 11.199C10.0409 11.0697 10.1045 10.9508 10.1978 10.8575L16.7152 4.34012C16.8678 4.18749 17.0266 4.10362 17.1875 4.10362ZM4.75 5.49993C3.64543 5.49993 2.75 6.39536 2.75 7.49993V17.2499C2.75 18.3545 3.64543 19.2499 4.75 19.2499H14.5C15.6046 19.2499 16.5 18.3545 16.5 17.2499V11.843C16.5 11.2305 15.7595 10.9237 15.3264 11.3568C15.1974 11.4857 15.125 11.6606 15.125 11.8429V15.8749C15.125 16.9795 14.2296 17.8749 13.125 17.8749H6.125C5.02043 17.8749 4.125 16.9795 4.125 15.8749V8.87493C4.125 7.77036 5.02043 6.87493 6.125 6.87493H10.157C10.3393 6.87493 10.5142 6.80249 10.6431 6.67356C11.0762 6.24046 10.7695 5.49993 10.157 5.49993H4.75Z" fill="white"/>
+													</svg>
+												| Редактировать
+						+pugin()
+				.row
+					.col-auto
+						button(type="button" data-fancybox data-src="#modal-booking").btn.btn-warning
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+								<path d="M16.0007 10H14.0007V14H10.0007V16H14.0007V20H16.0007V16H20.0007V14H16.0007V10ZM15.0007 5C9.48073 5 5.00073 9.48 5.00073 15C5.00073 20.52 9.48073 25 15.0007 25C20.5207 25 25.0007 20.52 25.0007 15C25.0007 9.48 20.5207 5 15.0007 5ZM15.0007 23C10.5907 23 7.00073 19.41 7.00073 15C7.00073 10.59 10.5907 7 15.0007 7C19.4107 7 23.0007 10.59 23.0007 15C23.0007 19.41 19.4107 23 15.0007 23Z" fill="white"/>
+								</svg>
+							| Новая бронь
+					.col-auto
+						button(type="button" data-fancybox data-src="#modal-booking").btn.btn-primary
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+								<path d="M16.0007 10H14.0007V14H10.0007V16H14.0007V20H16.0007V16H20.0007V14H16.0007V10ZM15.0007 5C9.48073 5 5.00073 9.48 5.00073 15C5.00073 20.52 9.48073 25 15.0007 25C20.5207 25 25.0007 20.52 25.0007 15C25.0007 9.48 20.5207 5 15.0007 5ZM15.0007 23C10.5907 23 7.00073 19.41 7.00073 15C7.00073 10.59 10.5907 7 15.0007 7C19.4107 7 23.0007 10.59 23.0007 15C23.0007 19.41 19.4107 23 15.0007 23Z" fill="white"/>
+								</svg>
+							| Лист ожидания
+				+b.modal-booking#modal-booking(style="display: none").p-0
+					.tabs(data-v-77b0a46e='' style='')
+						//- a.close-tab(data-v-77b0a46e='')
+							//- img(data-v-77b0a46e='' src='/img/close.png' alt='close')
+						ul.tabs__caption(data-v-77b0a46e='')
+							li(data-v-77b0a46e='')
+								| Редагування
+							li.active(data-v-77b0a46e='')
+								| Додати бронь
+						.tabs__content(data-v-77b0a46e='')
+							.reservation__block.form-user(data-v-77b0a46e='')
+								form(data-v-77b0a46e='')
+									.row(data-v-77b0a46e='')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Ім'я
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='text' placeholder='Эрик Максимович')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Прізвище
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='text' placeholder='Казаков ')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Номер телефона 
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='tel' readonly='readonly' placeholder='+ ___ __ ___ __ __')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') E-mail
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='email' placeholder='name@.com')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Номер
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											select(data-v-77b0a46e='')
+												option(data-v-77b0a46e='' value='4')
+													| №4
+												option(data-v-77b0a46e='' value='8')
+													| №8
+												option(data-v-77b0a46e='' value='12')
+													| №12
+												option(data-v-77b0a46e='' value='3')
+													| №3
+												option(data-v-77b0a46e='' value='7')
+													| №7
+												option(data-v-77b0a46e='' value='11')
+													| №11
+												option(data-v-77b0a46e='' value='2')
+													| №2
+												option(data-v-77b0a46e='' value='6')
+													| №6
+												option(data-v-77b0a46e='' value='10')
+													| №10
+												option(data-v-77b0a46e='' value='1')
+													| №1
+												option(data-v-77b0a46e='' value='5')
+													| №5
+												option(data-v-77b0a46e='' value='9')
+													| №9
+									.row(data-v-77b0a46e='')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-lg-8.col-md-4.col-md-4.col-xs-xs-12.lg-pdd.right-pdd.right-podd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Дата початку броні:
+											.col-lg-4.col-md-8.col-md-8.col-xs-xs-12.pdd-left(data-v-77b0a46e='')
+												input(data-v-77b0a46e='' type='date' placeholder='24.01.2020')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-sm-4.col-md-4.col-xs-xs-12.md-pdd-left(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Час початку :
+											.col-sm-8.col-md-8.col-xs-xs-12.lg-pdd(data-v-77b0a46e='')
+												p.user-p(data-v-77b0a46e='')
+													input(data-v-77b0a46e='' type='time' placeholder='15:30')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-lg-8.col-md-4.col-md-4.col-xs-xs-12.lg-pdd.right-pdd.right-podd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Дата закінчення броні
+											.col-lg-4.col-md-8.col-md-8.col-xs-xs-12.pdd-left(data-v-77b0a46e='')
+												input(data-v-77b0a46e='' type='date' placeholder='24.01.2020')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-sm-4.col-md-4.col-xs-xs-12.md-pdd-left(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Час закінчення:
+											.col-sm-8.col-md-8.col-xs-xs-12.lg-pdd(data-v-77b0a46e='')
+												p.user-p(data-v-77b0a46e='')
+													input(data-v-77b0a46e='' type='time' placeholder='15:30')
+									.row(data-v-77b0a46e='')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											.no-pdd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Cтатус броні :
+										.col-lg-5.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											.lg-pdd(data-v-77b0a46e='')
+												.radio-confirm(data-v-77b0a46e='')
+													input#confirm(name='user1' data-v-77b0a46e='' type='radio' value='0')
+													label.label(data-v-77b0a46e='' for='confirm') Підтверджено
+													input#Requir(name='user1' data-v-77b0a46e='' type='radio' value='1')
+													label.label(data-v-77b0a46e='' for='Requir') Вимагає підтвердження
+													input#Requir2(name='user1' data-v-77b0a46e='' type='radio' value='2')
+													label.label(data-v-77b0a46e='' for='Requir2') Оплачено
+										.col-xs-12(data-v-77b0a46e='')
+											textarea.note(data-v-77b0a46e='' placeholder='Comment')
+										.col-lg-4.col-md-4.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											.no-pdd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Джерело :
+										.col-lg-5.col-md-8.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											.lg-pdd(data-v-77b0a46e='')
+												.radio-source(data-v-77b0a46e='')
+													input#phones(name='user3' data-v-77b0a46e='' type='radio' value='Телефон')
+													label.label(data-v-77b0a46e='' for='phones') Телефон
+													input#email(name='user3' data-v-77b0a46e='' type='radio' value='email')
+													label.label(data-v-77b0a46e='' for='email') E-mail
+													input#social(name='user3' data-v-77b0a46e='' type='radio' value='Соц. мережі')
+													label.label(data-v-77b0a46e='' for='social') Соц. мережі
+													input#site(name='user3' data-v-77b0a46e='' type='radio' value='Сайт')
+													label.label(data-v-77b0a46e='' for='site') Сайт
+													input#site111(name='user3' data-v-77b0a46e='' type='radio' value='Додаток')
+													label.label(data-v-77b0a46e='' for='site111') Додаток
+										.col-xs-12.removes(data-v-77b0a46e='')
+											input.remove(data-v-77b0a46e='' type='submit' value='Видалити')
+											input#saveBooking.save(data-v-77b0a46e='' type='submit' value='Зберегти')
+						.tabs__content.active(data-v-77b0a46e='')
+							.reservation__block.form-user(data-v-77b0a46e='')
+								form(data-v-77b0a46e='')
+									.row(data-v-77b0a46e='')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Номер телефона 
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											.flagWrapBooking(data-v-77b0a46e='')
+												.iti.iti--allow-dropdown.iti--separate-dial-code
+													.iti__flag-container
+														.iti__selected-flag(title='Belarus (Беларусь): +375' role='combobox' aria-activedescendant='iti-0__item-by' aria-controls='iti-0__country-listbox' aria-expanded='false' aria-owns='iti-0__country-listbox' tabindex='0')
+															.iti__flag.iti__by
+															.iti__selected-dial-code +375
+															.iti__arrow
+														ul#iti-0__country-listbox.iti__country-list.iti__hide(role='listbox' aria-label='List of countries')
+															li#iti-0__item-us-preferred.iti__country.iti__preferred(data-country-code='us' data-dial-code='1' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__us
+																span.iti__country-name United States
+																span.iti__dial-code +1
+															li.iti__divider(role='separator' aria-disabled='true')
+															li#iti-0__item-by.iti__country.iti__standard.iti__highlight.iti__active(data-country-code='by' data-dial-code='375' role='option' aria-selected='true' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__by
+																span.iti__country-name Belarus (Беларусь)
+																span.iti__dial-code +375
+															li#iti-0__item-de.iti__country.iti__standard(data-country-code='de' data-dial-code='49' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__de
+																span.iti__country-name Germany (Deutschland)
+																span.iti__dial-code +49
+															li#iti-0__item-kz.iti__country.iti__standard(data-country-code='kz' data-dial-code='7' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__kz
+																span.iti__country-name Kazakhstan (Казахстан)
+																span.iti__dial-code +7
+															li#iti-0__item-kg.iti__country.iti__standard(data-country-code='kg' data-dial-code='996' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__kg
+																span.iti__country-name Kyrgyzstan (Кыргызстан)
+																span.iti__dial-code +996
+															li#iti-0__item-lv.iti__country.iti__standard(data-country-code='lv' data-dial-code='371' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__lv
+																span.iti__country-name Latvia (Latvija)
+																span.iti__dial-code +371
+															li#iti-0__item-lt.iti__country.iti__standard(data-country-code='lt' data-dial-code='370' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__lt
+																span.iti__country-name Lithuania (Lietuva)
+																span.iti__dial-code +370
+															li#iti-0__item-pl.iti__country.iti__standard(data-country-code='pl' data-dial-code='48' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__pl
+																span.iti__country-name Poland (Polska)
+																span.iti__dial-code +48
+															li#iti-0__item-ru.iti__country.iti__standard(data-country-code='ru' data-dial-code='7' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__ru
+																span.iti__country-name Russia (Россия)
+																span.iti__dial-code +7
+															li#iti-0__item-tr.iti__country.iti__standard(data-country-code='tr' data-dial-code='90' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__tr
+																span.iti__country-name Turkey (Türkiye)
+																span.iti__dial-code +90
+															li#iti-0__item-ua.iti__country.iti__standard(data-country-code='ua' data-dial-code='380' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__ua
+																span.iti__country-name Ukraine (Україна)
+																span.iti__dial-code +380
+															li#iti-0__item-us.iti__country.iti__standard(data-country-code='us' data-dial-code='1' role='option' aria-selected='false' tabindex='-1')
+																.iti__flag-box
+																	.iti__flag.iti__us
+																span.iti__country-name United States
+																span.iti__dial-code +1
+													input#phone_inp.form-control(data-intl-tel-input-id='0' data-v-77b0a46e='' type='tel' autocomplete='off' style='padding-left: 94px;' placeholder='29 491-19-11')
+												p.mt-2.text-center.text-primary(data-v-77b0a46e='' style='')
+													| Клієнта не знайдено
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Ім'я
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='text' placeholder='Эрик Максимович')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Прізвище
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='text' placeholder='Казаков ')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') E-mail
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											input(data-v-77b0a46e='' type='email' placeholder='name@i.ua')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											label(data-v-77b0a46e='') Номер
+										.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											select(data-v-77b0a46e='')
+												option(data-v-77b0a46e='' value='4')
+													| №4
+												option(data-v-77b0a46e='' value='8')
+													| №8
+												option(data-v-77b0a46e='' value='12')
+													| №12
+												option(data-v-77b0a46e='' value='3')
+													| №3
+												option(data-v-77b0a46e='' value='7')
+													| №7
+												option(data-v-77b0a46e='' value='11')
+													| №11
+												option(data-v-77b0a46e='' value='2')
+													| №2
+												option(data-v-77b0a46e='' value='6')
+													| №6
+												option(data-v-77b0a46e='' value='10')
+													| №10
+												option(data-v-77b0a46e='' value='1')
+													| №1
+												option(data-v-77b0a46e='' value='5')
+													| №5
+												option(data-v-77b0a46e='' value='9')
+													| №9
+									.row(data-v-77b0a46e='')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-lg-8.col-md-4.col-xs-xs-12.lg-pdd.right-pdd.right-podd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Дата початку броні :
+											.col-lg-8.col-md-8.col-xs-xs-12.pdd-left(data-v-77b0a46e='')
+												input(data-v-77b0a46e='' type='date' placeholder='24.01.2020')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-md-4.col-xs-xs-12.md-pdd-left(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Час початку:
+											.col-md-8.col-xs-xs-12.lg-pdd(data-v-77b0a46e='')
+												p.user-p(data-v-77b0a46e='')
+													input(data-v-77b0a46e='' type='time' placeholder='15:30')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-lg-8.col-md-4.col-xs-xs-12.lg-pdd.right-pdd.right-podd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Дата закінчення броні :
+											.col-lg-8.col-md-8.col-xs-xs-12.pdd-left(data-v-77b0a46e='')
+												input(data-v-77b0a46e='' type='date' placeholder='24.01.2020')
+										.col-lg-6.col-md-12(data-v-77b0a46e='')
+											.col-md-4.col-xs-xs-12.md-pdd-left(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Час закінчення:
+											.col-md-8.col-xs-xs-12.lg-pdd(data-v-77b0a46e='')
+												p.user-p(data-v-77b0a46e='')
+													input(data-v-77b0a46e='' type='time' placeholder='15:30')
+									.row(data-v-77b0a46e='')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											.lg-pdd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Cтатус броні :
+										.col-lg-8.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											.lg-pdd(data-v-77b0a46e='')
+												.radio-confirm(data-v-77b0a46e='')
+													input#confirm1(name='status' data-v-77b0a46e='' type='radio' value='0')
+													label.label(data-v-77b0a46e='' for='confirm1') Підтверджено
+													input#Requir1(name='status' data-v-77b0a46e='' type='radio' value='1')
+													label.label(data-v-77b0a46e='' for='Requir1') Вимагає підтвердження
+													input#Requir223(name='status' data-v-77b0a46e='' type='radio' value='2')
+													label.label(data-v-77b0a46e='' for='Requir223') Оплачено
+										.col-xs-12(data-v-77b0a46e='')
+											textarea.note(data-v-77b0a46e='' type='text' rows='3' placeholder='Comment')
+										.col-md-4.col-xs-xs-12(data-v-77b0a46e='')
+											.no-pdd(data-v-77b0a46e='')
+												label(data-v-77b0a46e='') Джерело :
+										.col-lg-8.col-md-8.col-xs-xs-12(data-v-77b0a46e='')
+											.no-pdd(data-v-77b0a46e='')
+												.radio-source(data-v-77b0a46e='')
+													input#phones1(name='user5' data-v-77b0a46e='' type='radio' value='Телефон')
+													label.label(data-v-77b0a46e='' for='phones1') Телефон
+													input#email1(name='user5' data-v-77b0a46e='' type='radio' value='email')
+													label.label(data-v-77b0a46e='' for='email1') E-mail
+													input#social1(name='user5' data-v-77b0a46e='' type='radio' value='Соц. мережі')
+													label.label(data-v-77b0a46e='' for='social1') Соц. мережі
+													input#site1(name='user5' data-v-77b0a46e='' type='radio' value='Сайт')
+													label.label(data-v-77b0a46e='' for='site1') Сайт
+													input#site11(name='user5' data-v-77b0a46e='' type='radio' value='Додаток')
+													label.label(data-v-77b0a46e='' for='site11') Додаток
+										.col-xs-12.removes(data-v-77b0a46e='')
+											input.remove(data-v-77b0a46e='' type='submit' value='Відмініти')
+											input#submitAddForm.save(data-v-77b0a46e='' type='submit' value='Зберегти')
+
 		+b.bookink-block--tennis
 			.table-wrap
 				table

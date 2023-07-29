@@ -710,14 +710,16 @@ iframe {
 			}
 
 
+	@include media-breakpoint-up(xl) {
 
-			.user--tennis{
-				.calendar-wrap .vc-container .vc-pane-layout,
-				.calendar-wrap .vc-container .vc-pane-container,
-				.calendar-wrap .vc-container .vc-pane{
-					max-width: 100%;
-				}
+		.user--tennis{
+			.calendar-wrap .vc-container .vc-pane-layout,
+			.calendar-wrap .vc-container .vc-pane-container,
+			.calendar-wrap .vc-container .vc-pane{
+				max-width: 100%;
 			}
+		}
+	}
 
 .bookink-block--tennis{
 	padding-top: 28px;
@@ -1126,4 +1128,78 @@ iframe {
 		}
 	}
 
+}
+
+.modal-booking{
+	max-width: 900px;
+	.tabs{
+		margin: 0;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+.form-user form .radio-source,
+.form-user form .radio-confirm{
+	align-items: center;
+}
+
+.form-user form .radio-confirm label.label:before,
+.form-user form .radio-source label.label:before{
+	bottom: auto;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+.btn-primary{
+	&:not(:hover){
+		background: #478ECC;
+		border-color: #478ECC;
+	}
+}
+.bookinkg-item{
+	padding: 10px;
+	border-radius: 5px;
+	background: var(--3, #ECF0F5);
+	margin-bottom: 1rem;
+	&__name{
+		@include ellips;
+	}
+	.row{
+		align-items: center;
+		@include roww(8px);
+		font-size: em(12);
+		flex-wrap: nowrap;
+
+	}
+	.btn{
+		background-image: none !important;
+		width: auto !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		display: inline-flex;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+		height: rem(30);
+		align-items: center;
+		svg{
+			margin-right: 5px;
+		}
+	}
+	img{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+}
+
+.user--tennis{
+
+	.user_top form{
+		
+		display: block;
+		width: 380px;
+	}
 }
