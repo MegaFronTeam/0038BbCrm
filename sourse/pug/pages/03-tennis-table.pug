@@ -363,6 +363,91 @@ block pagecontent
 											input.remove(data-v-77b0a46e='' type='submit' value='Відмініти')
 											input#submitAddForm.save(data-v-77b0a46e='' type='submit' value='Зберегти')
 
+		mixin td-inner()
+			.strong Групповое занятие
+			if block 
+				block
+			else
+				div.text-color(style="color: #14988B;") Штатный тренер: 
+					span.strong.name(data-src="#modal-trener" data-fancybox) Иванов И.С 
+			div Время занятия с 7.00 до 8.00
+
+			+b.dropdown-pers 
+				+e.text Список участников
+				+e.block
+					+e.item Алексей И.П.
+					+e.item Елена С. К.
+					+e.item Максим А.С.
+					+e.item Ольга Н.В.
+					+e.item Дмитрий В.Л.
+					+e.item Наталья А.М.
+					+e.item Иван П.К.
+					+e.item Анна М.Ф.
+		+b.bookink-block--tennis
+				+b.table-block
+					+e.col--time
+						+e.col-head  Время
+						+e.col-item--time(style="background: #FE7F53;") 7.00 - 8.00
+						+e.col-item--time(style="background: #FE7F53;") 8.00-9.00
+						+e.col-item--time 9.00-10.00
+						+e.col-item--time 10.00-11.00
+						+e.col-item--time 11.00-12.00	
+						+e.col-item--time 12.00-13.00	
+						+e.col-item--time 13.00-14.00
+						+e.col-item--time 14.00-15.00	
+					+e.slider
+						mixin col(t)
+							+e.col--el
+								+e.col-head= t
+								+e.col-item
+								+e.col-item
+								+e.col-item
+								+e.col-item 
+								+e.col-item 
+								+e.col-item 
+								+e.col-item 
+								+e.col-item 
+								block
+						+col('1 ХАРД')
+							+e.col-item(style="height: calc((60 + 60 + 30) * 1px); top: calc((0) * 1px)").active
+								+td-inner()
+							+e.col-item(style="height: calc((60 + 60) * 1px); top: calc((60 + 60 + 30) * 1px)").active 
+								+td-inner()
+						+col('2 ХАРД')
+							+e.col-item(style="height: calc((60 + 60) * 1px); top: calc((60 + 60 + 30) * 1px)").active 
+								+td-inner()
+						+col('ПИРАМИДА #115')
+						+col('2 ХАРД')
+						+col('')
+						+col('')
+						+col('')
+						+col('')
+						//- +e.col-item 
+						//- +e.col-item 
+					+e.col--waiting-list(style="background: #828282;")
+						+e.col-head(style="background: #828282;") Лист ожидания
+						+e.body(style="--hour-counter: 8")
+							+e.col-item--waiting-list(style="background: #B6F5D4" ) 
+								.td-inner
+									div Максим А.С.    
+									div Корт №ХАРД 4 на 19.00
+									div.text-secondary Желательно (с 17.00 до 20.00)
+									a.icon-link(href="#")
+										img(src="img/icon-link-1.svg", alt="")
+							+e.col-item--waiting-list(style="background: #FEB386") 
+								.td-inner
+										div Максим А.С.    
+										div Корт №ХАРД 4 на 19.00
+										div.text-secondary Желательно (с 17.00 до 20.00)
+										a.icon-link(href="#")
+											img(src="img/icon-link-1.svg", alt="")
+							+e.col-item--waiting-list
+							+e.col-item--waiting-list 
+							+e.col-item--waiting-list 
+							+e.col-item--waiting-list 
+							+e.col-item--waiting-list 
+							+e.col-item--waiting-list 
+							+e.col-item--waiting-list 
 		+b.bookink-block--tennis
 			.table-wrap
 				table
@@ -385,26 +470,6 @@ block pagecontent
 						mixin td2(t, t2)
 							tr
 								block
-						mixin td-inner()
-							.strong Групповое занятие
-							if block 
-								block
-							else
-								div.text-color(style="color: #14988B;") Штатный тренер: 
-									span.strong.name(data-src="#modal-trener" data-fancybox) Иванов И.С 
-							div Время занятия с 7.00 до 8.00
-
-							+b.dropdown-pers 
-								+e.text Список участников
-								+e.block
-									+e.item Алексей И.П.
-									+e.item Елена С. К.
-									+e.item Максим А.С.
-									+e.item Ольга Н.В.
-									+e.item Дмитрий В.Л.
-									+e.item Наталья А.М.
-									+e.item Иван П.К.
-									+e.item Анна М.Ф.
 
 						+td('7.00 - 8.00')(style="background: #FE7F53;")
 							td(class="active" rowspan='7') 
