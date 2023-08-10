@@ -65,13 +65,12 @@ block pagecontent
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
 								<path d="M16.0007 10H14.0007V14H10.0007V16H14.0007V20H16.0007V16H20.0007V14H16.0007V10ZM15.0007 5C9.48073 5 5.00073 9.48 5.00073 15C5.00073 20.52 9.48073 25 15.0007 25C20.5207 25 25.0007 20.52 25.0007 15C25.0007 9.48 20.5207 5 15.0007 5ZM15.0007 23C10.5907 23 7.00073 19.41 7.00073 15C7.00073 10.59 10.5907 7 15.0007 7C19.4107 7 23.0007 10.59 23.0007 15C23.0007 19.41 19.4107 23 15.0007 23Z" fill="white"/>
 								</svg>
-							| Новая бронь
-					.col-auto
-						button(type="button" data-fancybox data-src="#modal-booking").btn.btn-primary
+							| Новая бронь 
+					.col-auto.d-sm-none
+						button(type="button"  ).btn.btn-primary.toggle-list
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
 								<path d="M16.0007 10H14.0007V14H10.0007V16H14.0007V20H16.0007V16H20.0007V14H16.0007V10ZM15.0007 5C9.48073 5 5.00073 9.48 5.00073 15C5.00073 20.52 9.48073 25 15.0007 25C20.5207 25 25.0007 20.52 25.0007 15C25.0007 9.48 20.5207 5 15.0007 5ZM15.0007 23C10.5907 23 7.00073 19.41 7.00073 15C7.00073 10.59 10.5907 7 15.0007 7C19.4107 7 23.0007 10.59 23.0007 15C23.0007 19.41 19.4107 23 15.0007 23Z" fill="white"/>
-								</svg>
-							| Лист ожидания
+								</svg> 
 				+b.modal-booking#modal-booking(style="display: none").p-0
 					.tabs(data-v-77b0a46e='' style='')
 						//- a.close-tab(data-v-77b0a46e='')
